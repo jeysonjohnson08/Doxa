@@ -1,34 +1,44 @@
-const path = require("path");
-const Service = require("../models/Service");
+const path = require('path');
+const Contact = require('../models/contact');
 
+// Home Page
 const getHomePage = (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views", "index.html"));
+  res.sendFile(path.join(__dirname, '..', 'views', 'index.html'));
 };
 
+// About Page
 const getAboutPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views", "about.html"));
+  res.sendFile(path.join(__dirname, '..', 'views', 'about.html'));
 };
 
-const getPricingPage = async (req, res) => {
-  try {
-    const services = await Service.find(); // Fetch all services from the database
-    console.log("Services:", services); // Debugging: Ensure services are fetched correctly
+// Pricing Page
+const getPricingPage = (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'pricing.html'));
+};
 
-    res.sendFile(path.join(__dirname, "..", "views", "pricing.html"));
+// Contact Page
+const getContactPage = (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'views', 'contact.html'));
+};
+
+// Submit Contact Form
+const submitContactForm = async (req, res) => {
+  const { name, email, message } = req.body;
+
+  try {
+    const newContact = new Contact({ name, email, message });
+    await newContact.save();
+    res.status(201).json({ message: 'Message sent successfully!' });
   } catch (err) {
-    console.error("Error fetching services:", err);
-    res.status(500).json({ error: "Failed to fetch services" });
+    console.error('Error saving contact:', err);
+    res.status(500).json({ error: 'Failed to send message' });
   }
 };
 
-const getContactPage = (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views", "contact.html"));
-};
-
-// Export all functions
 module.exports = {
   getHomePage,
   getAboutPage,
   getPricingPage,
   getContactPage,
+  submitContactForm,
 };

@@ -1,11 +1,20 @@
-const express = require("express")
+const express = require('express');
 const router = express.Router();
-const serviceController = require("../controllers/serviceController")
+const serviceController = require('../controllers/serviceController');
 
-router.get("/",serviceController.getHomePage);
-router.get("/about",serviceController.getAboutPage);
-router.get('/pricing',serviceController.getPricingPage);
-router.get('/contact',serviceController.getContactPage);
+// Home Page
+router.get('/', serviceController.getHomePage);
 
+// About Page
+router.get('/about', serviceController.getAboutPage);
+
+// Pricing Page
+router.get('/pricing', serviceController.getPricingPage);
+
+// Contact Page
+router.get('/contact', serviceController.getContactPage);
+
+// Submit Contact Form
+router.post('/contact', serviceController.submitContactForm);
 
 module.exports = router;

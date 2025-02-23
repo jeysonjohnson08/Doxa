@@ -3,28 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us - Doxa Digital Solutions</title>
-  <link rel="stylesheet" href="/styles.css">
+  <title>Contact Us - Doxa Digital Ventures</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1><img src="/images/logo.png" alt="Doxa Digital Ventures Logo"> Doxa Digital Ventures</h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
   </header>
-  <main>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Name" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="message" placeholder="Message" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-    <p id="responseMessage"></p>
-  </main>
-  <script src="/script.js"></script>
+
+  <section class="contact-hero">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Have a question or want to work with us? Fill out the form below, and we'll get back to you soon.</p>
+    </div>
+  </section>
+
+  <section class="contact-form">
+    <div class="container">
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+        </div>
+        <button type="submit" class="cta-button">Send Message</button>
+      </form>
+      <div id="responseMessage"></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Doxa Digital Ventures. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script> <!-- Link to external JavaScript file -->
 </body>
 </html>

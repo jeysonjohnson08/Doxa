@@ -1,31 +1,461 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+header {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8em;
+  display: flex;
+  align-items: center;
+}
+
+header h1 img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #6699CC; /* Light blue on hover */
+}
+
+/* Hero Section */
+.hero, .about-hero, .pricing-hero, .contact-hero {
+  background: linear-gradient(135deg, #003366, #6699CC);
+  color: #ffffff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero h2, .about-hero h2, .pricing-hero h2, .contact-hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p, .about-hero p, .pricing-hero p, .contact-hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #6699CC; /* Light blue */
+  color: #ffffff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #336699; /* Medium blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.services h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #003366; /* Dark blue */
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card i {
+  font-size: 2em;
+  color: #003366; /* Dark blue */
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #003366; /* Dark blue */
+}
+
+.service-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* About Page */
+.about-hero {
+  background: linear-gradient(135deg, #003366, #6699CC);
+  color: #ffffff;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.about-hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.team {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.team h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #003366; /* Dark blue */
+}
+
+.team-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team-card {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Team Member Image Styles */
+.team-card img {
+  width: 150px; /* Fixed width */
+  height: 150px; /* Fixed height to make it square */
+  border-radius: 20px; /* Curved edges */
+  object-fit: cover; /* Ensures the image covers the square */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.team-card:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.team-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #003366; /* Dark blue */
+}
+
+.team-card p {
+  font-size: 1em;
+  color: #666;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: #003366; /* Dark blue */
+  margin: 0 10px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #6699CC; /* Light blue on hover */
+}
+
+/* Pricing Page */
+.pricing-plans {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.pricing-card {
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pricing-card.popular {
+  border: 2px solid #336699; /* Medium blue for popular plan */
+}
+
+.pricing-header {
+  padding: 20px;
+  text-align: center;
+  background-color: #003366; /* Dark blue */
+  color: #ffffff;
+}
+
+.pricing-header h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.pricing-header .price {
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.pricing-header .duration {
+  font-size: 1.2em;
+  color: #f0f0f0;
+}
+
+.pricing-features {
+  padding: 20px;
+}
+
+.pricing-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-features ul li {
+  margin: 15px 0;
+  font-size: 1em;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.pricing-features ul li i {
+  margin-right: 10px;
+  color: #003366; /* Dark blue */
+}
+
+.pricing-footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.pricing-footer .cta-button {
+  background-color: #6699CC; /* Light blue */
+  color: #ffffff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-footer .cta-button:hover {
+  background-color: #336699; /* Medium blue on hover */
+}
+
+/* Contact Page */
+.contact-form {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #003366; /* Dark blue */
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Footer */
+/* Footer */
+footer {
+  background-color: #003366; /* Dark blue */
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h2, .about-hero h2, .pricing-hero h2, .contact-hero h2 {
+    font-size: 2em;
   }
-  header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+
+  .hero p, .about-hero p, .pricing-hero p, .contact-hero p {
+    font-size: 1em;
   }
-  nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
+
+  .service-grid, .team-grid, .pricing-grid {
+    grid-template-columns: 1fr;
   }
-  main {
-    padding: 20px;
-    text-align: center;
-  }
-  form {
-    display: flex;
+
+  .team-grid {
     flex-direction: column;
     align-items: center;
   }
-  input, textarea, button {
-    margin: 10px 0;
-    padding: 10px;
-    width: 300px;
+
+  .pricing-card {
+    margin-bottom: 20px;
   }
+
+  .pricing-card.popular {
+    border: 2px solid #336699; /* Medium blue for popular plan */
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contact Page Button */
+.contact-form button.cta-button {
+  background-color: #336699; /* Darker shade of blue */
+  color: #ffffff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button.cta-button:hover {
+  background-color: #6699CC; /* Lighter shade of blue on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Thank You Page Styles */
+/* Thank You Page Styles */
+.thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.thank-you-card {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #003366; /* Dark blue */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.home-link:hover {
+  background-color: #0055a5; /* Lighter blue on hover */
+}
